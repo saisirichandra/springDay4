@@ -82,7 +82,6 @@ public class LoggingAspect {
 	@Pointcut("args(name)")
 	public void methodsStringArgs(String name) {}
 	
-	@Around("@annotation(aop.aspects.Loggable)") //i want myArou
 	public void myAroundAdvice(ProceedingJoinPoint pjp) {
 		
 		try {
@@ -96,6 +95,8 @@ public class LoggingAspect {
 		} System.out.println("finally advice");
 		
 	}
+	
+
 	
 	/*
 	 * @Before("execution(* aop..*.get*())") public void secondAdviceforAllGetters()
