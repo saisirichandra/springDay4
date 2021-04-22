@@ -64,6 +64,7 @@ public class LoggingAspect {
 	 * System.out.println("i/p String ="+name +"\n o/p String="+returnString); }
 	 */
 
+
 	@Pointcut("execution(* aop..*.get*())")
 	public void allGetters() {}
 
@@ -81,7 +82,7 @@ public class LoggingAspect {
 	@Pointcut("args(name)")
 	public void methodsStringArgs(String name) {}
 	
-	@Around("@annotation(aop.aspects.Loggable)") //i want myAroundAdvice to be applied to places where @Loggable annotation is present
+	@Around("@annotation(aop.aspects.Loggable)") //i want myArou
 	public void myAroundAdvice(ProceedingJoinPoint pjp) {
 		
 		try {
@@ -96,8 +97,6 @@ public class LoggingAspect {
 		
 	}
 	
-
-
 	/*
 	 * @Before("execution(* aop..*.get*())") public void secondAdviceforAllGetters()
 	 * { System.out.println("second log before method is executed"); }
